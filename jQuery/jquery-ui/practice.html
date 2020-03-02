@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>jQuery UI</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="jquery-ui.js"></script>
+    <link rel="stylesheet" href="jquery-ui.css">
+    <style type="text/css">
+        .little {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+
+        .big {
+            width: 350px;
+            height: 350px;
+            background-color: yellowgreen;
+
+        }
+
+        .dropped {
+            width: 350px;
+            height: 350px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="accordion">
+        <h3>draggable</h3>
+        <div id="draggable">Drag Me</div>
+        <h3>resizable</h3>
+        <div id="resizable" style="width:200px;height:100px;background-color:yellow;
+            "><span>I'm stuck in the box!</span></div>
+        <h3>droppable</h3>
+            <div class="little"></div>
+            <div class="big"></div>
+
+    </div>
+    <ul id="sortable">
+        <li>Rob</li>
+        <li>Matthew</li>
+        <li>Kate</li>
+        <li>Love</li>
+    </ul>
+    
+
+    <script type="text/javascript">
+        $("#accordion").accordion();
+        $("#sortable").sortable();
+        $("#draggable").draggable({axis:"x"});
+        $("#resizable").resizable({aixs:"x"});
+        $("span").draggable({containment: "parent"})
+
+        $(".little").draggable();
+        $(".big").droppable({
+            drop: function ( event, ui) {
+                $(this)
+                .toggleClass("dropped")
+            }
+        })
+    </script>
+</body>
+</html>

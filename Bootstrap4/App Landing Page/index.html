@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <title>App Landing Page</title>
+
+  <style>
+    .jumbotron {
+      background: url(background.jpg);
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    #emailForm {
+      justify-content: center;
+    }
+
+    #summary {
+      text-align: center;
+      justify-content: center;
+      margin-top: 100px;
+      margin-bottom: 100px;
+    }
+
+    #appStoreIcon {
+      width:200px;
+
+    }
+
+    #footer {
+      background-color: aquamarine;
+      padding-top: 150px;
+      margin-top: 50px;
+      text-align: center;
+      padding-bottom: 50px;
+    }
+
+    body {
+      position: relative;
+    }
+  </style>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+
+<body data-spy="scroll" data-target="#navbar" data-offset="150">
+  <nav id="navbar" class="navbar navbar-expand-md fixed-top navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#footer">Download The App</a>
+        </li>
+
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="email" placeholder="Email" aria-label="email">
+        <input class="form-control mr-sm-2" type="password" placeholder="Passwrod" aria-label="password">
+        <button class="btn btn-success my-2 my-sm-0" type="submit">Login</button>
+      </form>
+    </div>
+  </nav>
+
+  <div id="home" class="jumbotron">
+    <h1 class="display-4">My Awesome App!</h1>
+    <p class="lead">This is why You should download this fantastic app!</p>
+    <hr class="my-4">
+    <p>Want to know more? Join our mailing list!</p>
+    <form>
+      <div id="emailForm" class="form-row align-items-center">
+        <div class="col-auto">
+          <label for="email" class="sr-only">Your email</label>
+          <div class="input-group mb-2">
+            <div class="input-group-repend">
+              <div class="input-group-text">@</div>
+            </div>
+            <input placeholder="Your email" type="text" class="form-control" id="email">
+          </div>
+        </div>
+        <div class="col-auto">
+          <button class="btn btn-outline-dark mb-2" type="submit">Sign Up</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div id="about" class="container">
+    <div class="row" id="summary">
+      <h1>Why This App Is Awesome</h1>
+      <p class="lead">Summary, once again, of your app's awesomeness</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card-deck">
+      <div class="card">
+        <img src="avocado.jpg" class="card-img-top" alt="avocado image">
+        <div class="card-body">
+          <h5 class="card-title"><i class="fas fa-anchor"></i> Card title</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.
+            This content is a little bit longer.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="avocado.jpg" class="card-img-top" alt="avocado image">
+        <div class="card-body">
+          <h5 class="card-title"><i class="fas fa-bicycle"></i> Card title</h5>
+          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="avocado.jpg" class="card-img-top" alt="avocado image">
+        <div class="card-body">
+          <h5 class="card-title"><i class="fas fa-bong"></i> Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
+            </p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer">
+    <div>
+      <h2>Download the app!</h2>
+      <p class="lead">Really, why shoyld I download this app??</p>
+      <a href="#"><img id="appStoreIcon" src="appstore1.svg" alt="appstoreIcon"></a>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
