@@ -1,44 +1,59 @@
 <?php
 
+  $error = ""; $successMessage = "";
+
   if ($_POST) {
 
-    $error = "";
-    $successMessage = "";
-
     if(!$_POST["email"]) {
+
       $error .= "An email address is required.<br>";
+
     }
 
     if(!$_POST["subject"]) {
+
       $error .= "An subject address is required.<br>";
+
     }
 
     if(!$_POST["content"]) {
+
       $error .= "An content address is required.<br>";
+
     }
 
     if ($_POST["email"] && filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) === false) {
+
       $error .= "The email address is invalid.<br>";
+
     }
 
     if ($error != "") {
 
-      $error = '<div class="alert alert-danger" role="alert">
-  <strong>There were error(s) in your form: </strong>' . error . '
-</div>'; 
-  } else {
+      $error = '<div class="alert alert-danger" role="alert"><strong>There were error(s) in your form: </strong>'.$error.'</div>'; 
 
-    $emailTo = $_POST["email"];
-    $subject = $_POST["subject"];
-    $body = $_POST["content"];
-    $headers = "From: Yourlove@mattsunwoongkim-com.stackstaging.com";
-
-    if(mail($emailTo, $subject, $body, $headers)) {
-      $successMessage = '<div class="alert alert-green" role="alert">
-  <strong>You\'re message was sent!</strong></div>'; 
     } else {
-      $error = '<div class="alert alert-danger" role="alert">
-  <strong>Failed to Send</strong></div>'; 
+
+      $emailTo = $_POST["email"];
+
+      $subject = $_POST["subject"];
+
+      $body = $_POST["content"];
+
+      $headers = "From: ". $_POST["email"];
+
+
+      if(mail($emailTo, $subject, $body, $headers)) {
+
+        $successMessage = '<div class="alert alert-green" role="alert">
+        <strong>You\'re message was sent!</strong></div>'; 
+
+      } else {
+
+        $error = '<div class="alert alert-danger" role="alert">
+        <strong>Failed to Send</strong></div>'; 
+
+      }
     }
   }
 
@@ -56,30 +71,38 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Get in touch</title>
+
   </head>
+
   <body>
 
     <div class="container">
+
       <h1>Get in Touch!</h1>
 
       <div id="error"><? echo $error.$successMessage; ?></div>
 
       <form method="post">
-  <div class="form-group">
-    <label for="email">Email address</label>
-    <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
-  </div>
-  
-  <div class="form-group">
-    <label for="subject">Subject</label>
-    <input class="form-control" type="text" id="subject" name="subject">
-  </div>
-  <div class="form-group">
-    <label for="content">What would you like to ask us?</label>
-    <textarea class="form-control" id="content" rows="3" name="content"></textarea>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
+        </div>
+    
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input class="form-control" type="text" id="subject" name="subject">
+        </div>
+
+        <div class="form-group">
+          <label for="content">What would you like to ask us?</label>
+          <textarea class="form-control" id="content" rows="3" name="content"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+      </form>
+
     </div>
   
 
@@ -93,70 +116,39 @@
     <script type="text/javascript">
     
     $("form").submit(function (e) {
-      e.preventDefault();
 
       var error = "";
       
       if($("#email").val() == "") {
 
-        error += "The email field is required<br>";
+        error += "The email field is required<br>"
       }
 
       if($("#subject").val() == "") {
 
-        error += "The subject field is required<br>";
+        error += "The subject field is required<br>"
       }
 
       if($("#content").val() == "") {
 
-        error += "The content field is required<br>";
+        error += "The content field is required<br>"
       }
 
       if (error != ""){
-        $("#error").html('<div class="alert alert-danger" role="alert">
-  <strong>There were error(s) in your form: </strong>' + error + '
-</div>');
+
+        $("#error").html('<div class="alert alert-danger" role="alert"><p><strong>There were error(s) in your form: </strong></p>' + error + '</div>');
+
+        return false;
+
       } else {
-        $("form").unbind("submit").submit();
+
+        return true;
+
       }
+
     });
 
     </script>
-  
-  
-  
   
   </body>
 </html>
-
-
-<script type="text/javascript">
-    
-     $("form").submit(function (e) {
-      e.preventDefault();
-
-      var error = "";
-         if($("#email").val() == "") {
-
-        error += "The email field is required<br>";
-      }
-
-      if($("#subject").val() == "") {
-        
- 		 error += "The subject field is required<br>";
-      }
-
-      if($("#content").val() == "") {
-
-        error += "The content field is required<br>";
-      }
-
-        if (error != ""){
-        $("#error").html('<div class="alert alert-danger" role="alert"><p><strong>There were error(s) in your form: </strong></p>' + error + '</div>');
-
-      }else {
-        $("form").unbind("submit").submit();
-      }
-    });
-
-    </script>
